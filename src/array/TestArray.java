@@ -2,7 +2,7 @@ package array;
 
 public class TestArray {
     public static void main(String[] args) throws Exception {
-        Array array = new Array(13);
+        Array array = new Array(3);
         array.push("Paulo");
         array.push("Henrique");
         array.push("James");
@@ -14,6 +14,8 @@ public class TestArray {
         System.out.println(array.get(1));
 
         System.out.println(array.find("test"));
+
+        array.push("Test", 0);
         int i = 0;
     }
 }
