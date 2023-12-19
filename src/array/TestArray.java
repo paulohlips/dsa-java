@@ -10,6 +10,10 @@ public class TestArray {
 
         System.out.println("length: " + array.length());
         System.out.println(array.toString());
+
+        System.out.println(array.get(1));
+
+        System.out.println(array.find("test"));
         int i = 0;
     }
 }

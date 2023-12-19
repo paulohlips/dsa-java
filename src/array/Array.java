@@ -23,6 +23,22 @@ public class Array {
         return this.position;
     }
 
+    public String get(int index) throws IllegalArgumentException {
+        if(index < 0 || index > this.array.length) {
+            throw new IllegalArgumentException("Bad index!");
+        }
+        return this.array[index];
+    }
+
+    public int find(String item) {
+        for (int i = 0; i < position; i++) {
+            if(this.array[i].equals(item)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
