@@ -29,6 +29,14 @@ public class Array {
         position++;
     }
 
+
+    public void pop(int index) {
+        for (int i = index; i < position; i++) {
+            this.array[i] = this.array[i+1];
+        }
+        position--;
+    }
+
     public int length() {
         return this.position;
     }

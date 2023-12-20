@@ -8,14 +8,10 @@ public class TestArray {
         array.push("James");
         array.push("Bond");
 
-        System.out.println("length: " + array.length());
-        System.out.println(array.toString());
 
-        System.out.println(array.get(1));
-
-        System.out.println(array.find("test"));
-
-        array.push("Test", 0);
+        System.out.println("Array before pop " + array.length() + " " + array.toString());
+        array.pop(4);
+        System.out.println("Array after pop " + array.length() + " " + array.toString());
         int i = 0;
     }
 }
