@@ -1,14 +1,14 @@
 package array;
 
-public class Array {
+public class ArrayString {
     private int position;
-    private Object[] array;
+    private String[] array;
 
-    public Array(int length) {
-        this.array = new Object[length];
+    public ArrayString(int length) {
+        this.array = new String[length];
     }
 
-    public void push(Object item) {
+    public void push(String item) {
         this.doubleArrayLength();
         if(this.array.length > position) {
             this.array[position] = item;
@@ -16,7 +16,7 @@ public class Array {
         }
     }
 
-    public void push(Object item, int index) {
+    public void push(String item, int index) {
         this.doubleArrayLength();
         if(index < 0 || index > this.array.length) {
             throw new IllegalArgumentException("Bad index!");
@@ -47,7 +47,7 @@ public class Array {
 
     public void doubleArrayLength() {
         if(position == array.length) {
-            Object[] newArray = new Object[array.length * 2];
+            String[] newArray = new String[array.length * 2];
 
             for (int i = 0; i < array.length; i++) {
                 newArray[i] = array[i];
@@ -57,14 +57,14 @@ public class Array {
         }
     }
 
-    public Object get(int index) throws IllegalArgumentException {
+    public String get(int index) throws IllegalArgumentException {
         if(index < 0 || index > this.array.length) {
             throw new IllegalArgumentException("Bad index!");
         }
         return this.array[index];
     }
 
-    public int find(Object item) {
+    public int find(String item) {
         for (int i = 0; i < position; i++) {
             if(this.array[i].equals(item)) {
                 return i;
