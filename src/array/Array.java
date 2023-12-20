@@ -31,6 +31,10 @@ public class Array {
 
 
     public void pop(int index) {
+        if(index < 0 || index > this.array.length) {
+            throw new IllegalArgumentException("Bad index!");
+        }
+
         for (int i = index; i < position; i++) {
             this.array[i] = this.array[i+1];
         }
