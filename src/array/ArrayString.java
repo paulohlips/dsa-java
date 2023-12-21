@@ -1,19 +1,13 @@
 package array;
 
-public class ArrayString {
+import base.StaticCollection;
+
+public class ArrayString<T> extends StaticCollection<T> {
     private int position;
     private String[] array;
 
     public ArrayString(int length) {
-        this.array = new String[length];
-    }
-
-    public void push(String item) {
-        this.doubleArrayLength();
-        if(this.array.length > position) {
-            this.array[position] = item;
-            position++;
-        }
+        super(length);
     }
 
     public void push(String item, int index) {
@@ -41,22 +35,6 @@ public class ArrayString {
         position--;
     }
 
-    public int length() {
-        return this.position;
-    }
-
-    public void doubleArrayLength() {
-        if(position == array.length) {
-            String[] newArray = new String[array.length * 2];
-
-            for (int i = 0; i < array.length; i++) {
-                newArray[i] = array[i];
-            }
-
-            this.array = newArray;
-        }
-    }
-
     public String get(int index) throws IllegalArgumentException {
         if(index < 0 || index > this.array.length) {
             throw new IllegalArgumentException("Bad index!");
@@ -71,25 +49,5 @@ public class ArrayString {
             }
         }
         return -1;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-        s.append("[");
-
-        for (int i = 0; i < this.array.length; i++) {
-            if(this.array[i] != null) {
-                s.append(array[i]);
-            }
-
-            if(i < position -1) {
-                s.append(", ");
-            }
-        }
-
-        s.append("]");
-
-        return s.toString();
     }
 }
