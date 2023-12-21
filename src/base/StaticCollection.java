@@ -1,8 +1,12 @@
 package base;
 
 abstract public class StaticCollection<T> {
-    private T[] items;
-    private int position;
+    protected T[] items;
+    protected int position;
+
+    public StaticCollection() {
+        this(10);
+    }
 
     public StaticCollection(int length) {
         items = (T[]) new Object[length];
@@ -30,6 +34,10 @@ abstract public class StaticCollection<T> {
 
             this.items = newArray;
         }
+    }
+
+    public boolean isEmpty() {
+        return  this.position == 0;
     }
 
     @Override
