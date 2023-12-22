@@ -23,4 +23,13 @@ public class Stack<T> extends StaticCollection<T> {
         return items[position-1];
     }
 
+    public T unstack() {
+        if(super.isEmpty()) {
+            return null;
+        }
+        T item = super.items[position-1];
+        super.position --;
+        return  item;
+    }
+
 }

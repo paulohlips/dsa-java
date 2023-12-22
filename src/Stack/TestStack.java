@@ -8,6 +8,8 @@ public class TestStack {
         intStack.stackUp(2);
         intStack.stackUp(3);
         System.out.println(intStack.toString());
+        System.out.println(intStack.unstack());
+        System.out.println(intStack.toString());
         System.out.println(intStack.getLastItem());
         int i = 0;
     }

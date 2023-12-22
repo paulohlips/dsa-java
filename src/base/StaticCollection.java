@@ -45,7 +45,7 @@ abstract public class StaticCollection<T> {
         StringBuilder s = new StringBuilder();
         s.append("[");
 
-        for (int i = 0; i < this.items.length; i++) {
+        for (int i = 0; i < this.position; i++) {
             if(this.items[i] != null) {
                 s.append(items[i]);
             }
