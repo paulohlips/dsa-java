@@ -3,8 +3,6 @@ package Stack;
 import base.StaticCollection;
 
 public class Stack<T> extends StaticCollection<T> {
-    private T[] items;
-    private int position;
 
     public Stack() {
         super(10);
@@ -15,6 +13,14 @@ public class Stack<T> extends StaticCollection<T> {
 
     public void stackUp(T item) {
         super.push(item);
+    }
+
+    public  T getLastItem() {
+        if(super.isEmpty()) {
+            return null;
+        }
+
+        return items[position-1];
     }
 
 }
